@@ -1,0 +1,29 @@
+{
+  "name": "node-typescript-seed",
+  "version": "0.0.1",
+  "description": "A simple Node/TypeScript seed with watch support.",
+  "main": "src/app.ts",
+  "scripts": {
+    "prenodemon": "wait-on './dist/app.js'",
+    "nodemon": "nodemon --delay 1500ms \"build/app.js\"",
+    "build": "npm run clean && tsc",
+    "prestart": "npm run build",
+    "start": "node ./build/app.js",
+    "tsc-watch": "tsc -w",
+    "clean": "rimraf build",
+    "predev": "npm run clean",
+    "dev": "concurrently \"npm run tsc-watch\" \"npm run nodemon\"",
+    "lint": "tslint -c tslint.json \"./src/**/*.ts\""
+  },
+  "author": "Andre Giannico <andre@andregiannico.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.5.4",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.3",
+    "wait-on": "^1.5.3"
+  }
+}
