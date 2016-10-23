@@ -11,8 +11,8 @@
     "start": "node ./build/app/app.js",
     "predev": "npm run clean",
     "dev": "concurrently \"npm run tsc-watch\" \"npm run nodemon\"",
-    "prenodemon": "wait-on './build/app/app.js'",
-    "nodemon": "nodemon --delay 1500ms \"build/app/app.js\"",
+    "prenodemon": "wait-on ./build/app/app.js",
+    "nodemon": "nodemon --delay 1500ms \"./build/app/app.js\"",
     "tsc-watch": "tsc -w",
     "lint": "tslint -c tslint.json \"./src/**/*.ts\""
   },
